@@ -1,33 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Schoolbell&display=swap');
+
 @font-face {
     font-family: 'Chalk';
-    src: url('../font/drawing-guides-font/DrawingGuides-MJ7p.ttf') format(truetype);
+    src: url('../font/colored-crayons-font/ColoredCrayons-7wPR.ttf') format(truetype);
 }
 
-:root{
+:root {
     font-size: 30px;
 }
 
-body{
+body {
     background-image: url("../img/background-img.jpg");
     font-family: 'Chalk';
     margin: 0;
     color: white;
 }
 
-  @media (max-width: 768px) {
-    :root{
+@media (max-width: 768px) {
+    :root {
         font-size: 20px;
     }
+
     body {
-      background-image: url("../img/mobile-background-img.jpg");
+        background-image: url("../img/mobile-background-img.jpg");
     }
-    #hangedImgDisplay img{
+
+    #hangedImgDisplay img {
         height: 200px;
     }
 
-  }
+}
 
-button{
+button {
     background-color: transparent;
     border: none;
     color: white;
@@ -35,7 +39,7 @@ button{
     margin: 10px;
 }
 
-button:disabled{
+button:disabled {
     opacity: 30%;
 }
 
@@ -43,15 +47,20 @@ button:disabled{
     display: none;
 }
 
-#replay-button{
+#replay-button {
     text-transform: none;
     margin: 0;
 }
 
-#resultMessage{
+#resultMessage {
     transform: rotate(-10deg);
 }
 
-#replay-button{
+#replay-button {
     transform: rotate(10deg);
+}
+
+.red {
+    color: #A7001E;
+    font-family: 'Schoolbell';
 }

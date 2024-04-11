@@ -69,7 +69,7 @@ const letterClick = (event) => {
 
 const displayTrialsLeft = () => {
     const trialsLeftElement = document.getElementById('trialsLeft');
-    trialsLeftElement.textContent = `Chances restantes : ${trialsLeft}`;
+    trialsLeftElement.innerHTML = `    <p> Chances restantes : <span class="red"> ${trialsLeft} </span> </p>`;
 };
 
 const disableAllLetterButtons = () => {
