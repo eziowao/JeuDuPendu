@@ -84,7 +84,7 @@ const displayResultMessage = (result) => {
     if (result === "win") {
         messageElement.textContent = `Bien vu t'as trouve le mot !`;
     } else if (result === "lose") {
-        messageElement.textContent = `Oups, t'as perdu `;
+        messageElement.textContent = `Oups, t'as perdu. Le mot etait : ${chosenWord} `;
     }
 };
 
