@@ -69,7 +69,7 @@ const letterClick = (event) => {
 
 const displayTrialsLeft = () => {
     const trialsLeftElement = document.getElementById('trialsLeft');
-    trialsLeftElement.innerHTML = `    <p> Chances restantes : <span class="red"> ${trialsLeft} </span> </p>`;
+    trialsLeftElement.innerHTML = `<p> Chances restantes : <span class="red"> ${trialsLeft} </span> </p>`;
 };
 
 const disableAllLetterButtons = () => {
@@ -82,9 +82,9 @@ const disableAllLetterButtons = () => {
 const displayResultMessage = (result) => {
     const messageElement = document.getElementById('resultMessage');
     if (result === "win") {
-        messageElement.textContent = "Bien vu t'as trouve le mot !";
+        messageElement.textContent = `Bien vu t'as trouve le mot !`;
     } else if (result === "lose") {
-        messageElement.textContent = "Oups, t'as perdu ";
+        messageElement.textContent = `Oups, t'as perdu `;
     }
 };
 
