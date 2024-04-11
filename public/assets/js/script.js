@@ -14,11 +14,17 @@ const displayHiddenWord = () => {
     hiddenWordElement.textContent = hiddenWordWithSpaces;
 };
 
-const winImage = document.getElementById('win-image');
-
-
-
 let trialsLeft = 10;
+
+const hangedImgDisplay = (nb) => {
+    const hangedImg = document.querySelector('#hangedImg img');
+    hangedImg.src = `./public/assets/img/pendu${nb}.png`;
+};
+
+const winImgDisplay = () => {
+    const winImg = document.querySelector('#winImg img')
+    return winImg
+}
 
 const letterClick = (event) => {
     const clickedButton = event.target;
@@ -37,9 +43,12 @@ const letterClick = (event) => {
 
     clickedButton.disabled = true;
 
+    const hangedImg = document.querySelector('#hangedImg');
+    const winImg = document.querySelector('#winImg');
+
     if (!letterFound) {
         trialsLeft--;
-        trialsLeftDisplay();
+        displayTrialsLeft();
         hangedImgDisplay(10 - trialsLeft);
         if (trialsLeft === 0) {
             disableAllLetterButtons();
@@ -50,19 +59,17 @@ const letterClick = (event) => {
         if (hiddenWord === chosenWord) {
             disableAllLetterButtons();
             displayResultMessage("win");
+            hangedImg.remove()
+            winImgDisplay();
+            winImg.classList.remove('hidden')
             showReplayButton();
         }
     }
 };
 
-const trialsLeftDisplay = () => {
+const displayTrialsLeft = () => {
     const trialsLeftElement = document.getElementById('trialsLeft');
     trialsLeftElement.textContent = `Chances restantes : ${trialsLeft}`;
-};
-
-const hangedImgDisplay = (nb) => {
-    const hangedImg = document.querySelector('#hangedImg img');
-    hangedImg.src = `./public/assets/img/pendu${nb}.png`;
 };
 
 const disableAllLetterButtons = () => {
@@ -77,13 +84,13 @@ const displayResultMessage = (result) => {
     if (result === "win") {
         messageElement.textContent = "Bien vu t'as trouve le mot !";
     } else if (result === "lose") {
-        messageElement.textContent = "Oupsi, t'as perdu ";
+        messageElement.textContent = "Oups, t'as perdu ";
     }
 };
 
 const alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
 
-const alphabetDisplay = () => {
+const displayAlphabet = () => {
     const alphabetContainer = document.getElementById('alphabet');
 
     alphabetContainer.innerHTML = '';
@@ -100,9 +107,9 @@ const alphabetDisplay = () => {
     });
 };
 
-alphabetDisplay();
+displayAlphabet();
 displayHiddenWord();
-trialsLeftDisplay();
+displayTrialsLeft();
 
 const replayButton = document.getElementById('replay-button');
 
